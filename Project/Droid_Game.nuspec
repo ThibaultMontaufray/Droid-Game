@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Droid_game</id>
+    <version>1.0.5</version>
+    <title>Servodroid.Game</title>
+    <authors>Thibault MONTAUFRAY</authors>
+    <owners>Servodroid</owners>
+    <licenseUrl>https://raw.githubusercontent.com/ThibaultMontaufray/Tools4Libraries/master/License</licenseUrl>
+    <projectUrl>https://github.com/ThibaultMontaufray/Manager-Game</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/ThibaultMontaufray/Tools4Libraries/master/ManagersDevComponents/servodroidIconColor.png</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Learn a robot to play any games. One program for all games !</description>
+    <copyright>Copyright 2015</copyright>
+    <tags>Servodroid games learning play</tags>
+  </metadata>
+  <files>
+    <file src="lib\**\*.dll" target="lib" />
+    <file src="lib\**\*.xml" target="lib" />
+    <file src="lib\**\*.config" target="lib" />
+  </files>
+</package>
