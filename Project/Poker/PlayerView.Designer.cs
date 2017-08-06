@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cardView1 = new Droid_Game.CardView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cardView2 = new Droid_Game.CardView();
             this.labelCombinaison = new System.Windows.Forms.Label();
             this.labelSolde = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
             this.labelVictory = new System.Windows.Forms.Label();
-            this.cardView2 = new Droid_Game.CardView();
-            this.cardView1 = new Droid_Game.CardView();
+            this.labelWinLose = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -50,6 +51,17 @@
             this.panel1.Size = new System.Drawing.Size(100, 150);
             this.panel1.TabIndex = 2;
             // 
+            // cardView1
+            // 
+            this.cardView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cardView1.BackColor = System.Drawing.Color.Gainsboro;
+            this.cardView1.Location = new System.Drawing.Point(0, 0);
+            this.cardView1.Name = "cardView1";
+            this.cardView1.Size = new System.Drawing.Size(100, 150);
+            this.cardView1.TabIndex = 0;
+            this.cardView1.Visible = false;
+            this.cardView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PlayerView_Focus);
+            // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -59,6 +71,17 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(100, 150);
             this.panel2.TabIndex = 3;
+            // 
+            // cardView2
+            // 
+            this.cardView2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cardView2.BackColor = System.Drawing.Color.Gainsboro;
+            this.cardView2.Location = new System.Drawing.Point(0, 0);
+            this.cardView2.Name = "cardView2";
+            this.cardView2.Size = new System.Drawing.Size(100, 150);
+            this.cardView2.TabIndex = 1;
+            this.cardView2.Visible = false;
+            this.cardView2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PlayerView_Focus);
             // 
             // labelCombinaison
             // 
@@ -104,33 +127,22 @@
             this.labelVictory.Text = "Have best hand : 0%";
             this.labelVictory.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PlayerView_Focus);
             // 
-            // cardView2
+            // labelWinLose
             // 
-            this.cardView2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.cardView2.BackColor = System.Drawing.Color.Gainsboro;
-            this.cardView2.Location = new System.Drawing.Point(0, 0);
-            this.cardView2.Name = "cardView2";
-            this.cardView2.Size = new System.Drawing.Size(100, 150);
-            this.cardView2.TabIndex = 1;
-            this.cardView2.Visible = false;
-            this.cardView2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PlayerView_Focus);
-            // 
-            // cardView1
-            // 
-            this.cardView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.cardView1.BackColor = System.Drawing.Color.Gainsboro;
-            this.cardView1.Location = new System.Drawing.Point(0, 0);
-            this.cardView1.Name = "cardView1";
-            this.cardView1.Size = new System.Drawing.Size(100, 150);
-            this.cardView1.TabIndex = 0;
-            this.cardView1.Visible = false;
-            this.cardView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PlayerView_Focus);
+            this.labelWinLose.AutoSize = true;
+            this.labelWinLose.BackColor = System.Drawing.Color.Transparent;
+            this.labelWinLose.Location = new System.Drawing.Point(7, 125);
+            this.labelWinLose.Name = "labelWinLose";
+            this.labelWinLose.Size = new System.Drawing.Size(52, 13);
+            this.labelWinLose.TabIndex = 8;
+            this.labelWinLose.Text = "Win : 0 %";
             // 
             // PlayerView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.Controls.Add(this.labelWinLose);
             this.Controls.Add(this.labelVictory);
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.labelSolde);
@@ -157,5 +169,6 @@
         private System.Windows.Forms.Label labelSolde;
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label labelVictory;
+        private System.Windows.Forms.Label labelWinLose;
     }
 }

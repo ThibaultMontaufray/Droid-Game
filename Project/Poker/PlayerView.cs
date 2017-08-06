@@ -59,14 +59,17 @@
         public void Draw()
         {
             labelName.BackColor = Color.LightGray;
+            labelWinLose.Text = string.Format("Win : {0} %", (_player.Round == 0) ? 0 : (_player.RoundWin * 100) / _player.Round);
         }
         public void Win()
         {
             labelName.BackColor = Color.LemonChiffon;
+            labelWinLose.Text = string.Format("Win : {0} %", (_player.Round == 0) ? 0 : (_player.RoundWin * 100) / _player.Round);
         }
         public void Lose()
         {
             labelName.BackColor = Color.Maroon;
+            labelWinLose.Text = string.Format("Win : {0} %", (_player.Round == 0) ? 0 : (_player.RoundWin * 100) / _player.Round);
         }
         public void UpdateHand()
         {

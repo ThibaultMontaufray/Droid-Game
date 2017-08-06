@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Droid_casino.Properties {
+namespace Droid_Game.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Droid_casino.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Droid_casino.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Droid_Game.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -57,6 +57,32 @@ namespace Droid_casino.Properties {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à HEADER;HEADER;2;3;4;5;6;7;8;9;10;1
+        ///HARD;5;H;H;H;H;H;H;H;H;H;H
+        ///HARD;6;H;H;H;H;H;H;H;H;H;H
+        ///HARD;7;H;H;H;H;H;H;H;H;H;H
+        ///HARD;8;H;H;H;H;H;H;H;H;H;H
+        ///HARD;9;H;D;D;D;D;H;H;H;H;H
+        ///HARD;10;D;D;D;D;D;D;D;D;H;H
+        ///HARD;11;H;D;D;D;D;D;D;D;D;H
+        ///HARD;12;H;H;S;S;S;H;H;H;H;H
+        ///HARD;13;S;S;S;S;S;H;H;H;H;H
+        ///HARD;14;S;S;S;S;S;H;H;H;H;H
+        ///HARD;15;S;S;S;S;S;H;H;H;H;H
+        ///HARD;16;S;S;S;S;S;H;H;H;H;H
+        ///HARD;17;S;S;S;S;S;S;S;S;S;S
+        ///HARD;18;S;S;S;S;S;S;S;S;S;S
+        ///HARD;19;S;S;S;S;S;S;S;S;S;S
+        ///HARD;20;S;S;S;S;S;S;S;S;S;S
+        ///SOFT;2;H;H;H;D;D; [le reste de la chaîne a été tronqué]&quot;;.
+        /// </summary>
+        internal static string blackjack {
+            get {
+                return ResourceManager.GetString("blackjack", resourceCulture);
             }
         }
     }

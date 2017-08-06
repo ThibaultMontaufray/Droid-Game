@@ -17,6 +17,7 @@ namespace Droid_Game
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new DemoPoker());
+            //Application.Run(new DemoBlackJack());
         }
     }
 }

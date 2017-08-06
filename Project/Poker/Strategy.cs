@@ -1,6 +1,6 @@
 ﻿namespace Droid_Game.Poker
 {
-    public class Proba
+    public class Strategy
     {
         #region Attribute
 
@@ -10,7 +10,7 @@
         #endregion
 
         #region Constructor
-        public Proba()
+        public Strategy()
         {
 
         }

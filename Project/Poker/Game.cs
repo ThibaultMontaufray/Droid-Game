@@ -36,8 +36,13 @@
         #endregion
 
         #region Methods public
+        public void ResetCardSet()
+        {
+            _cardSet = new CardSet();
+        }
         public void SetBenchmark()
         {
+            _benchmark.Clear();
             _benchmark.Add(_cardSet.GetCard());
             _benchmark.Add(_cardSet.GetCard());
             _benchmark.Add(_cardSet.GetCard());
@@ -46,7 +51,26 @@
         }
         public void SetPlayers()
         {
-            LoadPlayers();
+            BuildPlayers();
+        }
+        public void NextRound()
+        {
+            int tmpPoints;
+            Hand hand;
+            List<Card> l1;
+
+            foreach (Player p in _players)
+            {
+                p.Cards.Clear();
+                p.Cards.Add(_cardSet.GetCard());
+                p.Cards.Add(_cardSet.GetCard());
+                l1 = new List<Card>();
+                l1.AddRange(p.Cards);
+                l1.AddRange(_benchmark);
+                p.Combinaison = Rule.GetCombinaison(new Hand() { Cards = l1 }, out tmpPoints, out hand);
+                p.FinalHand = hand;
+                p.Points = tmpPoints;
+            }
         }
         public Player WhoWin()
         {
@@ -58,8 +82,9 @@
             int cardPointWinner1 = ((int)_players[0].Cards[0].Value) > ((int)_players[0].Cards[1].Value) ? ((int)_players[0].Cards[0].Value) : ((int)_players[0].Cards[1].Value);
             int cardPointWinner2 = ((int)_players[0].Cards[0].Value) < ((int)_players[0].Cards[1].Value) ? ((int)_players[0].Cards[0].Value) : ((int)_players[0].Cards[1].Value);
             Player winner = new Player(_players[0]);
-            for (int i = 1; i < _players.Count; i++)
+            for (int i = 0; i < _players.Count; i++)
             {
+                _players[i].Round += 1;
                 if (((int)_players[i].Combinaison) > ((int)winner.Combinaison))
                 {
                     winner = _players[i];
@@ -99,6 +124,7 @@
                     }
                 }
             }
+            if (winner != null) { winner.RoundWin++; }
             return draw ? null : winner;
         }
         #endregion
@@ -107,36 +133,18 @@
         private void Init()
         {
             _benchmark = new List<Card>();
-            _cardSet = new CardSet();
+            ResetCardSet();
         }
-        private void LoadPlayers()
+        private void BuildPlayers()
         {
-            int tmpPoints;
-            Hand hand;
             _players = new List<Player>();
 
             Player p1 = new Player();
             p1.Name = "TOBI";
-            p1.Cards.Add(_cardSet.GetCard());
-            p1.Cards.Add(_cardSet.GetCard());
-            List<Card> l1 = new List<Card>();
-            l1.AddRange(p1.Cards);
-            l1.AddRange(_benchmark);
-            p1.Combinaison = Rule.GetCombinaison(new Hand() { Cards = l1 }, out tmpPoints, out hand);
-            p1.FinalHand = hand;
-            p1.Points = tmpPoints;
             _players.Add(p1);
 
             Player p2 = new Player();
             p2.Name = "CHALLENGER";
-            p2.Cards.Add(_cardSet.GetCard());
-            p2.Cards.Add(_cardSet.GetCard());
-            List<Card> l2 = new List<Card>();
-            l2.AddRange(p2.Cards);
-            l2.AddRange(_benchmark);
-            p2.Combinaison = Rule.GetCombinaison(new Hand() { Cards = l2 }, out tmpPoints, out hand);
-            p2.FinalHand = hand;
-            p2.Points = tmpPoints;
             _players.Add(p2);
         }
         #endregion

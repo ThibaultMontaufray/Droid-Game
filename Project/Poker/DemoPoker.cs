@@ -27,6 +27,12 @@
         public void Init()
         {
             _game = new Poker.Game();
+            _game.SetPlayers();
+            //LaunchRound();
+        }
+        public void LaunchRound()
+        {
+            _game.ResetCardSet();
             _game.SetBenchmark();
             benchmark1.ResetColor();
             benchmark1.SetCard1(_game.Benchmark[0]);
@@ -35,7 +41,8 @@
             benchmark1.SetCard4(_game.Benchmark[3]);
             benchmark1.SetCard5(_game.Benchmark[4]);
 
-            _game.SetPlayers();
+            _game.NextRound();
+
             playerView1.Player = _game.Players[0];
             playerView2.Player = _game.Players[1];
 
@@ -95,7 +102,7 @@
         #region Event
         private void buttonRelaunch_Click(object sender, System.EventArgs e)
         {
-            Init();
+            LaunchRound();
         }
         private void PlayerView2_GetFocus()
         {

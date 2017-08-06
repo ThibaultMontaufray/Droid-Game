@@ -7,8 +7,8 @@
     <ProjectGuid>{1A761136-018A-43C3-9086-B2364054E7A0}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Droid_casino</RootNamespace>
-    <AssemblyName>Droid_casino</AssemblyName>
+    <RootNamespace>Droid_Game</RootNamespace>
+    <AssemblyName>Droid_Game</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -48,26 +48,42 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-	<Reference Include="Tools4Libraries, Version=1.0.5976.11865, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Tools4Libraries, Version=1.0.5976.11865, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\Tools4Libraries.1.0.4\lib\4.0\Tools4Libraries.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Resources\blackjack.csv" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CardSet.cs" />
+    <Compile Include="BlackJack\DemoBlackJack.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BlackJack\DemoBlackJack.Designer.cs">
+      <DependentUpon>DemoBlackJack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BlackJack\Game.cs" />
+    <Compile Include="BlackJack\Rule.cs" />
+    <Compile Include="BlackJack\Strategy.cs" />
+    <Compile Include="Common\CardSet.cs" />
     <Compile Include="CardView.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="CardView.Designer.cs">
       <DependentUpon>CardView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Poker\Benchmark.cs">
+    <Compile Include="Common\CardSetStatus.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Poker\Benchmark.Designer.cs">
+    <Compile Include="Common\CardSetStatus.Designer.cs">
+      <DependentUpon>CardSetStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Benchmark.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\Benchmark.Designer.cs">
       <DependentUpon>Benchmark.cs</DependentUpon>
     </Compile>
     <Compile Include="Poker\DemoPoker.cs">
@@ -76,28 +92,35 @@
     <Compile Include="Poker\DemoPoker.Designer.cs">
       <DependentUpon>DemoPoker.cs</DependentUpon>
     </Compile>
-    <Compile Include="Enum.cs" />
+    <Compile Include="Common\Enum.cs" />
     <Compile Include="Poker\Game.cs" />
-    <Compile Include="Poker\Player.cs" />
+    <Compile Include="Common\Player.cs" />
     <Compile Include="Poker\PlayerView.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Poker\PlayerView.Designer.cs">
       <DependentUpon>PlayerView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Poker\Proba.cs" />
+    <Compile Include="Poker\Strategy.cs" />
     <Compile Include="Poker\Rule.cs" />
-    <Compile Include="Poker\Struct.cs" />
+    <Compile Include="Common\Struct.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BlackJack\DemoBlackJack.resx">
+      <DependentUpon>DemoBlackJack.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CardView.resx">
       <DependentUpon>CardView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Poker\Benchmark.resx">
+    <EmbeddedResource Include="Common\CardSetStatus.resx">
+      <DependentUpon>CardSetStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Benchmark.resx">
       <DependentUpon>Benchmark.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Poker\DemoPoker.resx">
       <DependentUpon>DemoPoker.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Poker\PlayerView.resx">
       <DependentUpon>PlayerView.cs</DependentUpon>

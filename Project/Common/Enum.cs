@@ -1,5 +1,8 @@
 ﻿namespace Droid_Game
 {
+    using System;
+
+    [Serializable]
     public enum CARDCOLOR
     {
         TREFLE,
@@ -7,6 +10,7 @@
         COEUR,
         PIQUE
     }
+    [Serializable]
     public enum CARDVALUE
     {
         DEUX = 2,
@@ -23,6 +27,7 @@
         ROI = 13,
         AS = 14
     }
+    [Serializable]
     public enum COMBINAISON
     {
         QUINTEFLUSHROYALE = 9,

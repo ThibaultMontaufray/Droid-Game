@@ -28,26 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DemoPoker));
+            Droid_Game.CardSet cardSet1 = new Droid_Game.CardSet();
             this.buttonRelaunch = new System.Windows.Forms.Button();
             this.playerView2 = new Droid_Game.Poker.PlayerView();
             this.playerView1 = new Droid_Game.Poker.PlayerView();
             this.benchmark1 = new Droid_Game.Poker.Benchmark();
+            this.cardSetStatus1 = new Droid_Game.CardSetStatus();
             this.SuspendLayout();
             // 
             // buttonRelaunch
             // 
-            this.buttonRelaunch.Location = new System.Drawing.Point(12, 26);
+            this.buttonRelaunch.Location = new System.Drawing.Point(614, 47);
             this.buttonRelaunch.Name = "buttonRelaunch";
             this.buttonRelaunch.Size = new System.Drawing.Size(75, 69);
             this.buttonRelaunch.TabIndex = 3;
-            this.buttonRelaunch.Text = "Relaunch";
+            this.buttonRelaunch.Text = "Launch round";
             this.buttonRelaunch.UseVisualStyleBackColor = true;
             this.buttonRelaunch.Click += new System.EventHandler(this.buttonRelaunch_Click);
             // 
             // playerView2
             // 
             this.playerView2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.playerView2.Location = new System.Drawing.Point(418, 174);
+            this.playerView2.Location = new System.Drawing.Point(12, 337);
             this.playerView2.Name = "playerView2";
             this.playerView2.Player = null;
             this.playerView2.Size = new System.Drawing.Size(400, 157);
@@ -65,17 +68,28 @@
             // benchmark1
             // 
             this.benchmark1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.benchmark1.Location = new System.Drawing.Point(160, 12);
+            this.benchmark1.Location = new System.Drawing.Point(12, 12);
             this.benchmark1.Name = "benchmark1";
             this.benchmark1.Size = new System.Drawing.Size(532, 156);
             this.benchmark1.TabIndex = 0;
+            // 
+            // cardSetStatus1
+            // 
+            cardSet1.Cards = ((System.Collections.Generic.List<Droid_Game.Card>)(resources.GetObject("cardSet1.Cards")));
+            cardSet1.NbCards = 32;
+            this.cardSetStatus1.CurrentCardSet = cardSet1;
+            this.cardSetStatus1.Location = new System.Drawing.Point(422, 179);
+            this.cardSetStatus1.Name = "cardSetStatus1";
+            this.cardSetStatus1.Size = new System.Drawing.Size(324, 309);
+            this.cardSetStatus1.TabIndex = 4;
             // 
             // DemoPoker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(826, 337);
+            this.ClientSize = new System.Drawing.Size(762, 505);
+            this.Controls.Add(this.cardSetStatus1);
             this.Controls.Add(this.buttonRelaunch);
             this.Controls.Add(this.playerView2);
             this.Controls.Add(this.playerView1);
@@ -94,6 +108,7 @@
         private Poker.PlayerView playerView1;
         private Poker.PlayerView playerView2;
         private System.Windows.Forms.Button buttonRelaunch;
+        private CardSetStatus cardSetStatus1;
     }
 }
 
